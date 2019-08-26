@@ -1,0 +1,3 @@
+<?php
+	require '../func/koneksi.php';$nama=$_POST['unama'];$user=$_POST['uuser'];$password=$_POST['upassword'];$pass=md5($password);$foto=$_FILES['ufoto']['name'];unlink("../assets/img/".$us['Foto']);move_uploaded_file($_FILES['ufoto']['tmp_name'], "../assets/img/".$_FILES['ufoto']['name']);mysql_query("insert into admin values('','$nama', '$user', '$pass', '$foto')")or die(mysql_error());header("location:../administrator");
+?>
